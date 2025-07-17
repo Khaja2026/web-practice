@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My css website</title>
+        <link rel="stylesheet" href="nav.css">
+    </head>
+    <body>
+       <nav>
+        <ul class="topnav" id="dropdownClick">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#About">About</a></li>
+            <li class="topnav-right"><a href="#signup">Sign Up</a></li>
+            <li class="topnav-right"><a href="#signin">Sign In</a></li>
+            <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
+        </ul>
+       </nav> 
+       <div class="container" id="section-1-gradient">
+        <div class="row">
+            <div class="col-6">
+                <div class="leftside-col">
+                    <h1 class="large">MITS</h1>
+                    <h1 class="large">DataScience</h1>
+                </div>
+                <form>
+                    <div class="leftside-col">
+                      <h2>Username</h2>
+                      <input class="inputbox" name="Username" type="text" placeholder="Username">
+                      <h2>Password</h2>
+                      <input class="inputbox" name="password" type="text" placeholder="Password">
+                    </div>
+                </form>
+            </div>
+            <div class="col-6">
+               <div class="rightside-col">
+                <div class="videocontainer">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/GpKA3EPDEbQ?si=sd4_TEZ0URZpxWcs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+               </div> 
+            </div>
+        </div>
+       </div>
+       <header>
+         <h1 class="section2header">The Standards of Awesomeness</h1>
+       </header>
+       <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="box">
+                    <div class="icon">
+                        <img src="k.jpg" alt="k">
+                    </div>
+                    <label>chat with me</label>
+                    <p>Madanapalle Institute of Technology & Science is established in 1998 in the picturesque and pleasant environs of Madanapalle and is ideally located on a sprawling 26.17 acre campus on Madanapalle - Anantapur Highway (NH-205) near Angallu, about 10km away from Madanapalle.</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="box">
+                    <div class="icon">
+                        <img src="k.jpg" alt="k">
+                    </div>
+                    <label>Admissions</label>
+                    <p>A candidate should possess the eligibility of 10+2 qualification from the Board of Intermediate, Government of Andhra Pradesh & Telangana, or any other equivalent examination recognized as equivalent thereto, with Mathematics, Physics and Chemistry as his / her optional subjects.</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="box">
+                    <div class="icon">
+                        <img src="k.jpg" alt="k">
+                    </div>
+                    <label>Contact</label>
+                    <p>
+
+                        Address
+                        Madanapalle Institute of Technology & Science
+                        Post Box No: 14, Kadiri Road,
+                        Angallu Madanapalle-517325,
+                        Andhra Pradesh, India
+                        Phone :
+                        +91- 8712655132 / 4 / 8, 08571280255
+                        Email Address
+                        admissions@mits.ac.in</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+              <button class="followus">Follow us</button>  
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+        <div class="col-7">
+            <article>
+                <p>
+                    With revolutionized education, multidisciplinary research and by facilitating diligent collaboration and broadening perspectives, MITS creates a conductive environment for the students, who come with sparkling ideas and transform them into truly thoughtful, effective global leaders to nurture an impacted society by revitalizing the lives.  
+                </p>
+            </article>
+        </div>
+        <div class="col-5">
+            <div class="slopeicon">
+                <img src="logo.png">
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footsy">
+    <div class="row">
+        <div class="col-3 mobilestack">
+            <h1>college</h1>
+            <ul>
+                <li>autonomous</li>
+                <li>26acre campus</li>
+                <li>25 years</li>
+
+            </ul>
+        </div>
+        <div class="col-3 mobilestack">
+            <h1>college</h1>
+            <ul>
+                <li>autonomous</li>
+                <li>26acre campus</li>
+                <li>25 years</li>
+
+            </ul>
+        </div>
+        <div class="col-3 mobilestack">
+            <h1>college</h1>
+            <ul>
+                <li>autonomous</li>
+                <li>26acre campus</li>
+                <li>25 years</li>
+
+            </ul>
+        </div>
+        <div class="col-3 mobilestack">
+            <h1>college</h1>
+            <ul>
+                <li>autonomous</li>
+                <li>26acre campus</li>
+                <li>25 years</li>
+
+            </ul>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+       <script>
+        function dropdownMenu(){
+            var x= document.getElementById("dropdownClick");
+            if (x.className==="topnav")
+            {
+                x.className +=" responsive";
+            }else{
+                x.className="topnav";
+            }
+        }
+       </script>
+
+
+    </body>
+</html>

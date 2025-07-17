@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard Login</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Silkscreen&display=swap" rel="stylesheet">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #dfe9f5;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav {
+  width: 280px;
+  background: lavenderblush;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  padding-top: 20px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li a {
+  color: rgb(85, 83, 83);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+  background: #eee;
+}
+
+nav ul li a .fas {
+  margin-right: 10px;
+}
+
+nav ul li.logout {
+  margin-top: auto;
+  padding-bottom: 20px;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.main-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.main-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.main-skills .card {
+  flex: 1 1 23%;
+  background: #fff;
+  text-align: center;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.main-skills .card:hover {
+  transform: translateY(-10px);
+}
+
+.main-skills .card h3 {
+  margin: 10px 0;
+}
+
+.main-skills .card p {
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.main-skills .card button {
+  background: orangered;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.main-skills .card button:hover {
+  background: rgba(223, 70, 15, 0.856);
+}
+
+.main-skills .card i {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.main-course {
+  margin-top: 30px;
+}
+
+.course-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.course-box ul {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.course-box ul li {
+  color: gray;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 10px;
+}
+
+.course-box ul li.active,
+.course-box ul li:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+.course {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.course .box {
+  flex: 1 1 30%;
+  padding: 20px;
+  background: powderblue;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+.course .box h3 {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.course .box p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.course .box button {
+  background: #007bff;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.course .box button:hover {
+  background: #0056b3;
+}
+
+.course .box i {
+  font-size: 50px;
+  color: #ccc;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .main-skills .card,
+  .course .box {
+    flex: 1 1 48%;
+  }
+
+  nav {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-skills .card,
+  .course .box {
+    flex: 1 1 100%;
+  }
+
+  nav {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .course-box ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .course-box ul li {
+    margin-bottom: 10px;
+  }
+}
+
+    </style>
+</head>
+<body>
+
+<div class="heading-container" id="welcomeScreen">
+    <div class="welcome-heading">WELCOME TO SKILL FORGE</div>
+    <div class="description">Welcome to the skill world, where you can learn and enhance your skills. Let's start here to forge your skill like a hero.</div>
+    <button class="next-btn" id="nextBtn">Next</button>
+</div>
+
+<div class="container" id="loginContainer">
+    <h2 id="formTitle">Sign In</h2>
+    <form id="signinForm">
+        <div class="input-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="input-field">
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+        </div>
+        <button type="submit" class="btn">Sign In</button>
+    </form>
+    <form id="signupForm" class="hidden">
+        <!-- Sign up form elements -->
+    </form>
+    <span id="toggleText" class="toggle-link">Don't have an account? Sign Up</span>
+</div>
+
+<script>
+    const nextBtn = document.getElementById('nextBtn');
+    const welcomeScreen = document.getElementById('welcomeScreen');
+    const loginContainer = document.getElementById('loginContainer');
+    const signinForm = document.getElementById('signinForm');
+    const signupForm = document.getElementById('signupForm');
+    const formTitle = document.getElementById('formTitle');
+    const toggleText = document.getElementById('toggleText');
+
+    nextBtn.addEventListener('click', () => {
+        welcomeScreen.style.display = 'none';
+        loginContainer.style.display = 'block';
+        loginContainer.style.animation = 'appear 0.8s ease-out forwards';
+    });
+
+    toggleText.addEventListener('click', () => {
+        const isSignInVisible = !signinForm.classList.contains('hidden');
+        
+        if (isSignInVisible) {
+            signinForm.classList.add('hidden');
+            signupForm.classList.remove('hidden');
+            formTitle.textContent = 'Sign Up';
+            toggleText.textContent = 'Already have an account? Sign In';
+        } else {
+            signinForm.classList.remove('hidden');
+            signupForm.classList.add('hidden');
+            formTitle.textContent = 'Sign In';
+            toggleText.textContent = "Don't have an account? Sign Up";
+        }
+    });
+
+    signinForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Signed In Successfully');
+        window.location.href = 'dashboard.html'; // Redirect to dashboard
+    });
+
+    signupForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const password = document.getElementById('newPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match. Please try again.');
+            return;
+        }
+
+        alert('Signed Up Successfully');
+        signupForm.reset();
+    });
+</script>
+
+</body>
+</html>

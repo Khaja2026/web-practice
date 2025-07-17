@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #4facfe, #00f2fe), url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-field {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .input-field label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .input-field input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #00c6ff;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0078cc;
+        }
+
+        .toggle-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #00c6ff;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 id="formTitle">Sign In</h2>
+    <form id="signinForm">
+        <div class="input-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="input-field">
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+        </div>
+        <button type="submit" class="btn">Sign In</button>
+    </form>
+    <form id="signupForm" class="hidden">
+        <div class="input-field">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" required>
+        </div>
+        <div class="input-field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+        </div>
+        <div class="input-field">
+            <label for="newEmail">Email</label>
+            <input type="email" id="newEmail" required>
+        </div>
+        <div class="input-field">
+            <label for="newPassword">Password</label>
+            <input type="password" id="newPassword" required>
+        </div>
+        <div class="input-field">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" required>
+        </div>
+        <button type="submit" class="btn">Sign Up</button>
+    </form>
+    <span id="toggleText" class="toggle-link">Don't have an account? Sign Up</span>
+</div>
+
+<script>
+    const signinForm = document.getElementById('signinForm');
+    const signupForm = document.getElementById('signupForm');
+    const formTitle = document.getElementById('formTitle');
+    const toggleText = document.getElementById('toggleText');
+
+    toggleText.addEventListener('click', () => {
+        const isSignInVisible = !signinForm.classList.contains('hidden');
+        
+        if (isSignInVisible) {
+            signinForm.classList.add('hidden');
+            signupForm.classList.remove('hidden');
+            formTitle.textContent = 'Sign Up';
+            toggleText.textContent = 'Already have an account? Sign In';
+        } else {
+            signinForm.classList.remove('hidden');
+            signupForm.classList.add('hidden');
+            formTitle.textContent = 'Sign In';
+            toggleText.textContent = "Don't have an account? Sign Up";
+        }
+    });
+
+    signinForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Signed In Successfully');
+        signinForm.reset();
+    });
+
+    signupForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const password = document.getElementById('newPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match. Please try again.');
+            return;
+        }
+
+        alert('Signed Up Successfully');
+        signupForm.reset();
+    });
+</script>
+
+</body>
+</html>

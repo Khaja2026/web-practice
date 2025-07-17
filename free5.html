@@ -1,0 +1,41 @@
+<!DOCTYPE  html>
+<html>
+    <head>
+        <style type="text/css">
+            div#hussain{
+                width: 50px;
+                height: 100px;
+                background-color: chartreuse;
+                position: relative;
+                animation-name:rat;
+                animation-duration: 5s;
+                animation-delay: 3s;
+                animation-iteration-count: 3;
+            }
+
+
+            div#shaik{
+                width: 50px;
+                height: 100px;
+                background-color: chartreuse;
+                animation-name:fat;
+                animation-duration: 5s;
+            
+            }
+            @keyframes rat{
+                25%{background-color: aqua; left: 0px;top: 0px;}
+                50%{background-color: black; left:20px;top:20px;}
+                75%{background-color: coral; left:100px;top:90px;}
+                100%{background-color: hotpink;left:0px;top:0px;}
+            }
+            @keyframes fat{
+                from{background-color:chartreuse;}
+                to{background-color: black;}
+            }
+        </style>
+    </head>
+    <body>
+        <div id="hussain"></div>
+        <div id="shaik"></div>
+    </body>
+</html>
